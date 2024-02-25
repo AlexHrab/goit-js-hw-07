@@ -13,3 +13,4 @@ document.querySelector(".change-color").addEventListener("click", event => {
   bodyColor.style.backgroundColor = random;
   colorName.textContent = random;
 })
+

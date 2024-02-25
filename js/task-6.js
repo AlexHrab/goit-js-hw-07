@@ -40,6 +40,11 @@ document.querySelector("button[data-create]").addEventListener("click", event =>
   document.querySelector("#boxes").innerHTML = ""
  })
 
+ const container = document.createElement("div")
+ document.querySelector("body").append(container)
+ container.classList.add("container")
+ container.append(document.querySelector("#controls"), document.querySelector("#boxes"))
+
 
 
 
