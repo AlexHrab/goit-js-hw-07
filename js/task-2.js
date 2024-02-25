@@ -33,9 +33,12 @@ const array = []
 
 newGal.style.display = "flex"
 newGal.style.flexWrap = "wrap"
-newGal.style.columnGap = "4px"
-newGal.style.rowGap = "4px"
+newGal.style.columnGap = "24px"
+newGal.style.rowGap = "48px"
 newGal.style.listStyleType = "none"
+newGal.style.margin = "auto"
+newGal.style.width = "1128px"
+newGal.style.padding = "0"
 
 images.forEach(image => {
   const img = document.createElement("img")
@@ -46,8 +49,9 @@ images.forEach(image => {
   array.push(li)
   newGal.append(...array)
  
- img.style.width = "300px"
- img.style.height = "200px"
+ img.style.width = "360px"
+ img.style.height = "300px"
+ img.style.margin = "0"
 })
 
   
