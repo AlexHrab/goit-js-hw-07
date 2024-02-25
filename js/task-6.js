@@ -9,16 +9,19 @@ let num;
 document.querySelector("input").addEventListener("input", event =>{num = event.currentTarget.value})
 
 document.querySelector("button[data-create]").addEventListener("click", event => {
-  if(document.querySelector("#boxes").innerHTML === ""){
-    createBoxes(num)
-    }else if(document.querySelector("#boxes").innerHTML !== "" && document.querySelector("input").value !== ""){
-     
+  if(document.querySelector("input").value !== "" && document.querySelector("#boxes").innerHTML === ""){
+    createBoxes(document.querySelector("input").value)
+  }
+  else if(document.querySelector("#boxes").innerHTML === ""){
+    createBoxes(num)}
+    
+    else if(document.querySelector("#boxes").innerHTML !== "" && document.querySelector("input").value !== ""){
             document.querySelector("#boxes").innerHTML = ""    
       createBoxes(num)
       if( document.querySelector("#boxes").innerHTML === ""){
         document.querySelector("input").value = ""
-       } 
-    }
+       }  
+    } 
     num = 0
   })
 

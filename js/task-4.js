@@ -61,6 +61,7 @@ document.querySelectorAll(".login-form>label>input").forEach(el =>{
     el.style.borderStyle = "solid"
     el.style.borderColor = "#808080"
     el.style.marginTop = "8px"
+    el.style.textAlign = "left"
 })
 
 

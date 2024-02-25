@@ -30,7 +30,7 @@ document.querySelector("#name-input").style.lineHeight = "1.5"
 document.querySelector("#name-input").style.letterSpacing = "0.04em"
 document.querySelector("#name-input").style.color = "#2e2f42"
 document.querySelector("#name-input").style.marginBottom = "16px"
-
+document.querySelector("#name-input").style.textAlign = "left"
 
 
 document.querySelector("h1").style.margin = "0"

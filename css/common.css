@@ -18,7 +18,7 @@ body {
 
 #controls{
   display: flex;
-  width: 486px;
+  min-width: 486px;
   height: 104px;
   background-color: #f6f6fe;
   border-radius: 8px;
