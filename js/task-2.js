@@ -47,14 +47,14 @@ images.forEach(image => {
   const li = document.createElement("li")
   li.appendChild(img)
   array.push(li)
-  newGal.append(...array)
+ 
  
  img.style.width = "360px"
  img.style.height = "300px"
  img.style.margin = "0"
 })
 
-  
+newGal.append(...array)
 
 
 
