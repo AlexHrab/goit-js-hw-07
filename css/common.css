@@ -89,8 +89,10 @@ color: #fff;
 }
 
 #boxes{
-  width: 486px;
-  height: 160px;
+  /* width: 486px; */
+  flex-wrap: wrap;
+  min-height: 160px;
+  flex-shrink: 0;
   background-color: #f6f6fe;
   display: flex;
   gap: 16px;

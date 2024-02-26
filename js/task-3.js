@@ -1,11 +1,23 @@
-document.querySelector("#name-input").addEventListener("input", event =>{
-    [...document.querySelector("#name-input").value].every(el => el === " ") ||
-     document.querySelector("#name-input").value === "" ?
-     document.querySelector("#name-output").textContent = "Anonymous" :
-     document.querySelector("#name-output").textContent = event.currentTarget.value.trim()
+const input = document.querySelector("#name-input")
+const span = document.querySelector("#name-output")
 
-}  
-)
+input.addEventListener("input", (event) => {
+    const inputValue = event.target.value.trim()
+    span.textContent = inputValue || "Anonymous" 
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 const block = document.createElement("div")
 block.classList.add("newBlock")

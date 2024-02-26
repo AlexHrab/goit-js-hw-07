@@ -1,53 +1,55 @@
-function getRandomHexColor() {
-  return `#${Math.floor(Math.random() * 16777215)
-    .toString(16)
-    .padStart(6, 0)}`;
-}
 
-let num;
 
-document.querySelector("input").addEventListener("input", event =>{num = event.currentTarget.value})
 
-document.querySelector("button[data-create]").addEventListener("click", event => {
-  if(document.querySelector("input").value !== "" && document.querySelector("#boxes").innerHTML === ""){
-    createBoxes(document.querySelector("input").value)
+
+const box = document.querySelector("#boxes")
+const destroyBtn = document.querySelector("button[data-destroy]")
+const input = document.querySelector("input")
+const createBtn = document.querySelector("button[data-create]")
+
+createBtn.addEventListener("click", (event) => {
+  const amount = + input.value;
+
+  if(amount < 1 || amount > 100){
+    return alert("the value must be less than 100")
   }
-  else if(document.querySelector("#boxes").innerHTML === ""){
-    createBoxes(num)}
-    
-    else if(document.querySelector("#boxes").innerHTML !== "" && document.querySelector("input").value !== ""){
-            document.querySelector("#boxes").innerHTML = ""    
-      createBoxes(num)
-      if( document.querySelector("#boxes").innerHTML === ""){
-        document.querySelector("input").value = ""
-       }  
-    } 
-    num = 0
-  })
+destroyBox()
+  createBoxes(amount)
+
+  
+})
+
+destroyBtn.addEventListener("click", destroyBox)
+
+ function destroyBox(){
+  box.innerHTML = "";
+  input.value = "";
+ }
 
   function createBoxes(amount){
     const array = []
-    if(num<=100){
-  for(let i=0;i<amount*10;i+=10){
+    
+  for(let i=0;i<amount;i+=1){
      const newDiv = document.createElement("div")
-     newDiv.style.width = `${30+i}px`
-     newDiv.style.height = `${30+i}px`
+     newDiv.style.width = `${30+10*i}px`
+     newDiv.style.height = `${30+10*i}px`
      newDiv.style.backgroundColor = getRandomHexColor()
      array.push(newDiv)
  }
- document.querySelector("#boxes").append(...array)
-      }   
+ box.append(...array)
+       
     }
     
- document.querySelector("button[data-destroy]").addEventListener("click", event =>{
-  document.querySelector("#boxes").innerHTML = ""
- })
-
+   
  const container = document.createElement("div")
  document.querySelector("body").append(container)
  container.classList.add("container")
  container.append(document.querySelector("#controls"), document.querySelector("#boxes"))
 
-
+ function getRandomHexColor() {
+  return `#${Math.floor(Math.random() * 16777215)
+    .toString(16)
+    .padStart(6, 0)}`;
+}
 
 
